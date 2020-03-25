@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'UpdateHelper\\' => array($vendorDir . '/kylekatarnls/update-helper/src'),
+    'Slim' => array($vendorDir . '/slim/slim'),
 );

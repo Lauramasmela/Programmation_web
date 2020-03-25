@@ -99,6 +99,13 @@ class ComposerStaticInit35e86e3ccf295de121a69c8d56e4a27b
                 0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
             ),
         ),
+        'S' => 
+        array (
+            'Slim' => 
+            array (
+                0 => __DIR__ . '/..' . '/slim/slim',
+            ),
+        ),
     );
 
     public static function getInitializer(ClassLoader $loader)
