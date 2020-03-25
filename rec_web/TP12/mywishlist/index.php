@@ -20,8 +20,7 @@ $db->bootEloquent();
 //liste la liste liste
 echo "LA LISTE \n" . "<br/>";
 
-$listes = Liste::select( 'no', 'titre', 'description' )
-->get();
+$listes = Liste::select( 'no', 'titre', 'description' )->get();
 foreach($listes as $val){
     print $val->no . '<br/>';
     print $val->titre . '<br/>';
@@ -94,6 +93,40 @@ $l=$v->Liste::where('id', '=', 3)->first();
 
 $s->get('/hello/world', function (){
   echo "Hello, World !";
+});
+
+$s->get('/liste/items', function () {
+
+    $liste = new Liste();
+
+
+    foreach($items as $val){
+        echo $val->nom . '<br/>';
+        echo $val->description . '<br/>';
+    }
+
+});
+
+$slim=Item::where('no', '=', $_GET['id']);
+
+$s->get($id);
+/****/
+
+$slim->get('/liste/items', function () {
+
+    $liste = new Liste();
+    $items = $liste->items()->get();
+    foreach($items as $val){
+        print $val->nom . '<br/>';
+        print $val->description . '<br/>';
+    }
+});
+
+$slim->get('/item?id="$val"', function () {
+
+    $val=$_GET['id'];
+    $item_precis = Item::where('id','=',$val)->first() ;
+    print $item_precis;
 });
 
 $s->run();
