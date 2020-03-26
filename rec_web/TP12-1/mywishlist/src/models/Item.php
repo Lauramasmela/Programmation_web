@@ -11,7 +11,7 @@ class Item extends \Illuminate\Database\Eloquent\Model {
   public $timestamps = false;
 
 
-  public function souhaits(){
+  public function items(){
     return $this->belongsTo('\models\Liste', 'id');
   }
 
