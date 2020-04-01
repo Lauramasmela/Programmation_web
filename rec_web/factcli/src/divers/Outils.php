@@ -1,6 +1,6 @@
 <?php
 
-namespace tableaux\divers;
+namespace factcli\divers;
 require_once 'vendor/autoload.php';
 class Outils{
 
