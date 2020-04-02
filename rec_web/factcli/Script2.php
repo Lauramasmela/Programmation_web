@@ -14,6 +14,10 @@ Outils::headerHTML("facture");
 $f= new \Slim\Slim();
 echo $_GET['client_id'];
 
+if(isset($_GET['client_id'])){
+    $client_id = $_GET['client_id'];
+}
+
 $f->get('/factures/:client_id', function ($client_id){
 
 

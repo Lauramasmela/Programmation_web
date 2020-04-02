@@ -7,34 +7,44 @@ use \factcli\models\Facture as Facture;
 use \factcli\divers\Outils as Outils;
 use \Slim\Slim as Slim;
 
-Outils::headerHTML("client");
+  Outils::headerHTML("client");
 
-$c= new \Slim\Slim();
-/*saisir des donnee dans le navigateur: les form html*/
+  $c= new \Slim\Slim();
 
-
-$c->get('/', function (){
-
-  /*requette des factures du client*/
-  $requete= Client::select('id', 'nomcli')->get();
-  echo<<<A
-  <form id="formulaire_de_Client" methode=GET action='Script2.php'>
-    <select name='client_id'>
-A;
+  $c->get('/', function (){
+    requeteClient();
+  });
 
 
-/* insertion des noms client dans la liste deroulante*/
-  foreach($requete as $row){
+    function initformulare(){
+      echo<<<A
+      <form id="formulaire_de_Client" methode=GET action='Script2.php'>
+        <select name='client_id'>
+  A;
+    }
 
-    echo  "<option value=$row->id>$row->nomcli</option>";
-  }
-  echo "</select>";
-  echo  "<input type='submit' value='OK'/>";
-  echo  " </form>";
-});
+    function finformulaire(){
+      echo "</select>";
+      echo  "<input type='submit' value='OK'/>";
+      echo  " </form>";
+    }
 
-$c->run();
+    function requeteClient(){
+      /*requette des clients*/
+      $requete= Client::select('id', 'nomcli')->get();
+      initformulare();
+      foreach($requete as $choix){
+        echo  "<option value=$choix->id>$choix->nomcli</option>";
+      }
+      finformulaire();
+    }
 
-Outils::footerHTML();
+  //$slim= \Slim\Slim::getInstance();
+  //$client_id = $slim->request->get()['client_id'];
+  //$varlien=$c->urlFor('leclient');
+
+  $c->run();
+
+  Outils::footerHTML();
 
 ?>
