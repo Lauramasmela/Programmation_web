@@ -8,7 +8,7 @@ class Client extends \Illuminate\Database\Eloquent\Model{
   public $timestamps = false;
 
   public function factures(){
-    return $this->hasMany('\models\Facture', 'client_id');
+    return $this->hasMany('factcli\models\Facture', 'client_id');
   }
 
 }

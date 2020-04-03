@@ -8,7 +8,7 @@ class Facture extends \Illuminate\Database\Eloquent\Model{
   public $timestamps = false;
 
   public function clients(){
-    return $this->belongsTo('\models\Client', 'client_id');
+    return $this->belongsTo('factcli\models\Client', 'client_id');
   }
 }
 
