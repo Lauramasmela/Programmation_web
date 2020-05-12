@@ -1,5 +1,6 @@
+import * as actions from './actions.js';
 
-let monster; //document.querySelector("#monster");
+//let monster; document.querySelector("#monster");
 let actionbox; //= document.querySelector("#actionbox");
 let status; //= document.querySelector("#status");
 let b2; //= document.querySelector("#b2") ;
@@ -20,7 +21,8 @@ export function showme(){
 	b6.addEventListener("click", showme);
 }
 
-
+let monster = document.querySelector("#monster");
+monster.init('nil', 2, 1.0, true);
 
 
 
