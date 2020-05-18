@@ -1,15 +1,31 @@
 .monster {
+    text-align: center;
     display: inline-block;
     vertical-align: top;
     height: 100px;
-    margin-left: 50px;
+    margin-left: 50px;  
+}
 
+.bordun{
+    border: 1px solid black;
+}
+
+.borddeux{
+    border: 5px solid black;
+}
+
+.bordtrois{
+    border: 10px solid black;
+}
+
+.bordquatre{
+    border: 20px solid black;
 }
 
 #monster {
-    border-radius: 5px;
-    background-color: orange;
+    border-radius: 5px; 
     width: 100px;
+    font-family: lucida Blackletter, arial;
 }
 
 #actionbox {
@@ -17,9 +33,32 @@
     width: 200px;
     overflow: hidden;
 }
-#actionbox >p {
-    margin: 0 ;
+
+.rouge{
+    background-color: red;
+ }  
+
+.orange{
+    background-color: orange;
 }
+
+.bleu{
+    background-color: blue;
+}
+
+.vert{
+    background-color: green;
+}
+
+
+
+
+#actionbox >p {
+
+    margin: 0;
+    font-weight: bold;
+}
+
 ul#status {
     display: flex;
     flex-direction: row;
@@ -29,16 +68,19 @@ ul#status {
 }
 
 ul#status li {
+    margin-top: 10px;
     margin-left : 20px;
 }
 
 button {
-    width: 75px;
+    margin: 5px;
+    width: 100px;
     height: 40px;
     background-color: deepskyblue;
-    border: 0;
-    margin-right: 8px;
-}
+    border: 3;
+    margin-right: 50px;
+    margin-left: 20px;
+
 
 button:hover {
     background-color: dodgerblue;

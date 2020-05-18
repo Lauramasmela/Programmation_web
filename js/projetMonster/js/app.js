@@ -1,22 +1,26 @@
 import * as actions from './actions.js';
 import * as ui from './ui.js';
 
-let monster;// document.querySelector("#monster");
-let actionbox; //= document.querySelector("#actionbox");
-let status; //= document.querySelector("#status");
-let b2; //= document.querySelector("#b2") ;
-let b3; //= document.querySelector("#b3");
-let b7; //= document.querySelector("#b7");
-let b4;//= document.querySelector("#b4");
-let b5; //= document.querySelector("#b5");
-let b6;//= document.querySelector("#b6");
+let monster;
+let actionbox; 
+let status; 
+let b2; 
+let b3; 
+let b7; 
+let b4;
+let b5; 
+let b6;
+let b1;
+let k;
 
 export function start(){
-	console.log("c'est la fonction start()");
-	actions.init('NayroQuintana', 2, 3.50, false);
+	
+	actions.init('NayroQuintana', 50, 50, true);
+	setInterval(actions.actionsHasard, 2000); 
 	ui.displayStatus();
 	enregistrementHandler();
-
+	ui.fondBoiteMonstre();
+	ui.bordureBoiteMonstre();
 }
 
 
@@ -26,6 +30,14 @@ export function enregistrementHandler(){
 	b3 = document.querySelector("#b3");
 	b7 = document.querySelector("#b7");
 	b5 = document.querySelector("#b5");
+	b4 = document.querySelector("#b4");
+	b1 = document.querySelector("#b1");
+	k = document.querySelector("#k");
+
+	
+	k.addEventListener("click", actions.tuerMonstre);
+	b1.addEventListener("click", actions.donnerVieMonstre);
+	b4.addEventListener("click", actions.sleep);
 	b5.addEventListener("click", actions.eat);
 	b7.addEventListener("click", actions.work);
 	b3.addEventListener("click", actions.fight);
